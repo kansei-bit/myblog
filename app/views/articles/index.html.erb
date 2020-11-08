@@ -7,3 +7,11 @@
   <%= link_to '新規登録', new_user_registration_path %>
   <%= link_to 'ログイン', new_user_session_path %>
 <% end %>
+<div class="articles">
+<p>新着記事一覧</p>
+<% @articles.each do | article | %>
+<ul>
+  <li><%= article.title %></li><span><%= "by #{article.user.nickname}" %></span>
+</ul>
+<% end %>
+</div>
