@@ -3,6 +3,6 @@
 <p><%= "by #{@article.user.nickname}" %></p>
 <% if user_signed_in? && current_user.id == @article.user.id %>
 <%= link_to '編集', edit_article_path(@article.id) %>
-<%= link_to '削除', root_path %>
+<%= link_to '削除', article_path(@article.id), method: :delete %>
 <% end %>
 <%= link_to '戻る', root_path %>
