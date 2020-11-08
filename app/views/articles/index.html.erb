@@ -11,7 +11,10 @@
 <p>新着記事一覧</p>
 <% @articles.each do | article | %>
 <ul>
-  <li><%= article.title %></li><span><%= "by #{article.user.nickname}" %></span>
+  <li>
+    <%= link_to "#{article.title}", article_path(article.id) %>
+    <span><%= "by #{article.user.nickname}" %></span>
+  </li>
 </ul>
 <% end %>
 </div>
